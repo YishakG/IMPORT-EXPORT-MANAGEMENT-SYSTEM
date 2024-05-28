@@ -1,0 +1,8 @@
+<!-- car_list.html -->
+<h1>Car List</h1>
+<a href="{% url 'car_create' %}">Add New Car</a>
+<ul>
+  {% for car in cars %}
+    <li>{{ car.make }} {{ car.model }} ({{ car.year }}) - VIN: {{ car.vin }}</li>
+  {% endfor %}
+</ul>
