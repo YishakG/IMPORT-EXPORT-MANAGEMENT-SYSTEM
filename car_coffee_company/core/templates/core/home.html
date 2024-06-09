@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+
+    <link rel="stylesheet" href="{% static 'core/home.css' %}">
+
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="loginHeader">
+            <h1>SIEMS</h1>
+            <h2>Simple Import Export</h2>
+        </div>
+        <form class="loginForm">
+            <div class="formGroup">
+                
+                <a href="{% url 'SIEMS_about' %}">About Us</a>
+                
+            </div>
+            <div class="formGroup">
+                <label for="employeeID">Employee ID:</label>
+                <input type="text" placeholder="emp1234/16" id="employeeID" name="employeeID" required>
+            </div>
+            <div class="formGroup">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="12345678" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

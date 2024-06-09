@@ -1,0 +1,99 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('login.jpg');
+    background-size:cover;
+    background-color:black;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+div.loginHeader {
+    text-align:center;
+    margin-bottom: 50px;
+}
+
+div.loginHeader h1{
+    font-size: 50px;
+    font-style:italic;
+    color:gold;
+    margin:0px;
+}
+
+div.loginHeader h2 {
+    font-size: 30px;
+    font-style:italic;
+    text-transform: uppercase;
+    color:gold;
+    margin:0px;
+}
+
+form {
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    padding: 100px;
+    border: 2px solid #ffffff08;
+    border-radius: 10px;
+
+}
+
+div.formGroup a{
+    display:block;
+    text-transform: lowercase;
+    text-align:right;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: gold;
+    margin-top: 1px;
+}
+
+div.formGroup a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+div.formGroup label{
+    display: block;
+    text-transform: uppercase;
+    text-align:left;
+    font-size: 20px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom:10px;
+}
+
+div.formGroup input{
+    height: 30px;
+    width: 100%;
+    border: 2px solid gold;
+    font-style: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background: black;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    background: black;
+    border: 2px solid gold;
+    color: gold;
+}
+
+button:hover {
+    font-size: 20px;
+    padding: 10px;
+    background: gold;
+    border: 2px solid black;
+    color: black;
+}

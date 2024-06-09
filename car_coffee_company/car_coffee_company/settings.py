@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'communication',
+    'core',
+    'finance',
+    'orders',
     ]
 
 MIDDLEWARE = [
@@ -50,6 +54,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'car_coffee_company.urls'
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPLATES = [
     {
@@ -67,6 +75,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'car_coffee_company.wsgi.application'
 
 
@@ -76,7 +85,7 @@ WSGI_APPLICATION = 'car_coffee_company.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'car_coffee_db',  # Your database name
+        'NAME': 'IEMS',  # Your database name
         'USER': 'root',  # Your MySQL username
         'PASSWORD': '1234@1234yG7',  # Your MySQL password
         'HOST': 'localhost',  # Change if your MySQL server is hosted elsewhere
@@ -126,3 +135,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # myproject/settings.py
+AUTH_USER_MODEL = 'core.User'
