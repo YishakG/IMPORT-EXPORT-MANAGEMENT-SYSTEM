@@ -7,6 +7,7 @@ class Order(models.Model):
     ORDER_TYPES = (
         ('import', 'Import'),
         ('export', 'Export'),
+        
     )
     order_type = models.CharField(max_length=10, choices=ORDER_TYPES)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
@@ -16,6 +17,22 @@ class Order(models.Model):
     order_date = models.DateField()
     delivery_date = models.DateField()
     status = models.CharField(max_length=20, default='pending')
+
+class Buy(models.Model):
+    id = models.AutoField(primary_key=True)
+    Model = models.CharField(max_length=100, default='Anonymous')
+    Year = models.CharField(max_length=4, default='2023')
+    Price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    Name = models.CharField(max_length=100, default='Anonymous')
+    Email = models.EmailField(default='example@example.com')
+    PhoneNumber = models.CharField(max_length=20, default='00-0000-0000')
+    Location = models.CharField(max_length=50,default='Unknown Address')
+    Color = models.CharField(max_length=50, default='Unspecified')
+    Date =  models.DateField(null=True, blank=True) 
+    def __str__(self):
+        return self.Name
+
+
 class Document(models.Model):
     DOCUMENT_TYPES = (
         ('invoice', 'Invoice'),

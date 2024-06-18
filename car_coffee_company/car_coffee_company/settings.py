@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'finance',
     'orders',
     ]
+AUTH_USER_MODEL = 'core.User' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,14 +56,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'car_coffee_company.urls'
 
-import os
+#import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,6 +93,7 @@ DATABASES = {
         'PORT': '3306',  # Default MySQL port
     }
 }
+
 
 
 # Password validation
@@ -135,4 +137,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # myproject/settings.py
-AUTH_USER_MODEL = 'core.User'
+
+
+LOGIN_REDIRECT_URL = '/about/'  # Default redirect URL after login
+# LOGOUT_REDIRECT_URL = 'login'  # Redirect URL after logout
+
+AUTHENTICATION_BACKENDS = [
+    'core.backends.CustomUserBackend',  # Path to your custom backend
+    'django.contrib.auth.backends.ModelBackend',  # Default backend
+]

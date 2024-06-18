@@ -19,5 +19,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("core.urls"))
-    ]
+    path('', include("core.urls")),
+    path('accounts/', include('django.contrib.auth.urls')),  # Django's built-in authentication views
+    # path('core/', include('core.urls')),  # Include your custom core URLs
+       ]
