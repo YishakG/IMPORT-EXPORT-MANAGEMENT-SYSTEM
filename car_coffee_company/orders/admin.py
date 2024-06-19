@@ -1,15 +1,12 @@
 from django.contrib import admin
-from .models import User
-from .models import Order
-from .models import Document
-from .models import Shipment
-from .models import Buy
+from .models import *
 
 
 admin.site.register(Order)
 admin.site.register(Document)
 admin.site.register(Shipment)
 admin.site.register(Buy)
+admin.site.register(importOrder)
 
 
 # Register your models here.

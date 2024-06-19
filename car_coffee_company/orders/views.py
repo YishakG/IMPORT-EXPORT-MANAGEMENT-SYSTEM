@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from orders.models import Buy
+from orders.models import *
+import random
+
+def generate_random_integer():
+    return random.randint(100000, 999999)
+
 def purchase(request):
     if request.method == 'POST':
         model = request.POST['model']
@@ -26,4 +31,40 @@ def purchase(request):
         return HttpResponse("Order Saved Successfully")
     else:
         return render(request,"core/orders.html")
-# Create your views here.
+def imports(request):
+    if request.method == 'POST':
+        print("entered the if")
+        name = request.POST['user_name']
+        email = request.POST['email']
+        model = request.POST['model']
+        specifications = request.POST['specifications']
+        color = request.POST['color']
+        year = request.POST['year']
+        price = request.POST['price']
+        date = request.POST['orderDate']
+        count = request.POST['count']
+        print("before trackingno")
+        trackingno = generate_random_integer()
+        my = importOrder(
+            TrackingNo = trackingno,
+            Name = name,
+            Email = email,
+            Model = model,
+            Specifications = specifications,
+            Color = color,
+            Year = year,
+            Price = price,
+            Date = date,
+            Count = count,
+                      )
+        my.save()
+
+        print('after my.save')
+        return HttpResponse("Import Order Saved Successfully")
+    else:
+        print('entered else')
+        return render(request,"core/importOrders.html")
+    
+
+        
+

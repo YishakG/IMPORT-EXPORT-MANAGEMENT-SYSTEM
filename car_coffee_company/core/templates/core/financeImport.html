@@ -20,17 +20,24 @@
     </header>
 
     <section class="about-us">
-        <h1>Finance Details</h1>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="{% static 'core/images/finance1.jpg' %}" alt="About Us">
-            </div>
-            <div class="about-button">
-                <a href="{% url 'finance_available' %}">Available Cars</button>
-                <a href="{% url 'finance_sell' %}">Sell Cars</button>
-                <a href="{% url 'finance_import' %}">Import cars</button>
-            </div>
-             
+        <h1>Import Car Details</h1> 
+        <div class="Import-content">
+            <ul>
+                {% for order in import_orders %}
+                <li>
+                    <strong>Tracking No: {{order.TrackingNo }}</strong>
+                    <strong>Model:{{order.Model }}</strong>
+                    <strong>Specifications: {{order.Specifications }}</strong>
+                    <strong>Count: {{order.Count }}</strong>
+                    <a href="#">Confirm</a>
+                </li>
+                
+
+                {% empty %}
+                <li>No orders found.</li>
+                {% endfor %}
+            </ul>
+            
         </div>
     </section>
 
@@ -39,4 +46,3 @@
     </footer>
 </body>
 </html>
-

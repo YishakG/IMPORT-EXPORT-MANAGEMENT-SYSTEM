@@ -10,8 +10,7 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="{% url 'SIEMS_home' %}">Home</a></li>
+            <ul><li><a href="{% url 'SIEMS_home' %}">Home</a></li>
                 <li><a href="{% url 'SIEMS_about' %}">About Us</a></li>
                 <li><a href="{% url 'SIEMS_cars' %}">Cars</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -20,18 +19,8 @@
     </header>
 
     <section class="about-us">
-        <h1>Finance Details</h1>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="{% static 'core/images/finance1.jpg' %}" alt="About Us">
-            </div>
-            <div class="about-button">
-                <a href="{% url 'finance_available' %}">Available Cars</button>
-                <a href="{% url 'finance_sell' %}">Sell Cars</button>
-                <a href="{% url 'finance_import' %}">Import cars</button>
-            </div>
-             
-        </div>
+        <h1>Available Car Details</h1>
+        <div class="available-content"></div>
     </section>
 
     <footer>
@@ -39,4 +28,3 @@
     </footer>
 </body>
 </html>
-
